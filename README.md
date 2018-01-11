@@ -43,7 +43,7 @@ sum_plus_10 = fork(10, add, sum)
 res = sum_plus_10([1,2,3]) # 16
 ```
 
-The other special case concerns something called capping. This makes `g` behave as a unary function, and is achieve by passing `f` as `None`. Example:
+The other special case concerns something called *capping*. This makes `g` behave as a unary function, and is achieved by passing `f` as `None`. Example:
 
 ```python
 def inv(x):
@@ -55,8 +55,44 @@ res = parse_and_inv('5') # 0.2
     
 ## Hooks
 
-n/a
+A hook is formed by two functions.
+
+    hook(f, g)(y) ⇔ f(y, g(y))
+    fork(f, g)(x, y) ⇔ f(x, g(y))
 
 ## Trains
 
-n/a
+A train is a way to string together a longer sequence of functions according to the following pattern:
+
+    train(f, g) ⇔ hook(f, g)
+    train(f, g, h) ⇔ fork(f, g, h)
+    train(…, f, g, h) ⇔ train(…, fork(f, g, h))
+
+### Example
+
+A function to underline a string with dashes:
+
+```python
+from operator import add, mul
+from tacit import train
+
+underline = train(add, '\n', add, '-', mul, len)
+print(underline('clackety-clack'))
+```
+
+Result:
+
+    clackety-clack
+    --------------
+
+Equivalent, without using `train()`:
+
+```python
+from operator import add, mul
+from tacit import fork, hook
+
+to_line = fork('-', mul, len) # e.g. 'abcde' -> '-----'
+newline = fork('\n', add, to_line) # e.g. '-----' -> '\n-----'
+underline = hook(add, newline)
+print(underline('clackety-clack'))
+```
