@@ -67,7 +67,7 @@ A train is a way to string together a longer sequence of functions according to 
     train(f, g) ⇔ hook(f, g)
     train(f, g, h) ⇔ fork(f, g, h)
     train(…, f, g, h) ⇔ train(…, fork(f, g, h))
-
+    
 ### Example
 
 A function to underline a string with dashes:
