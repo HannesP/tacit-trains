@@ -50,7 +50,7 @@ def inv(x):
     return 1/x
 
 parse_and_inv = fork(None, inv, int)
-res = parse_and_inv('5') # 0.2
+res = parse_and_inv('5') # 0.2, equivalent to inv(int('5'))
 ```
     
 ## Hooks
