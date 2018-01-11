@@ -6,7 +6,7 @@ def fork(f,g,h):
             elif len(x) == 2:
                 return g(h(x[0],x[1]))
             else:
-                raise
+                raise Exception
         return q
     elif not callable(f):
         def q(*x):
@@ -15,7 +15,7 @@ def fork(f,g,h):
             elif len(x) == 2:
                 return g(f, h(x[0],x[1]))
             else:
-                raise
+                raise Exception
         return q
     else:
         def q(*x):
@@ -24,7 +24,7 @@ def fork(f,g,h):
             elif len(x) == 2:
                 return g(f(x[0],x[1]), h(x[0],x[1]))
             else:
-                raise
+                raise Exception
         return q
 
 def hook(f,g):
@@ -34,7 +34,7 @@ def hook(f,g):
         elif len(x) == 2:
             return f(x[0], g(x[1]))
         else:
-            raise
+            raise Exception
     return q
 
 def train(*fs):
