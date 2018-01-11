@@ -31,7 +31,7 @@ avg = fork(sum, div, len)
 res = avg([1, 7, 2, 2, 9]) # 4.2
 ```
 
-Notice the syntactic similarity to English – `fork(sum, div, len)` and “*sum* *div*ided by *len*gth”.
+Notice the syntactic similarity to English – `fork(sum, div, len)` and “*sum* *div*ided by *len*gth”. No x is mentioned!
 
 ### Advanced
 
