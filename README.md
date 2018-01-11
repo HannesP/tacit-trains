@@ -10,7 +10,7 @@ I’ll quote Wikipedia:
 
 ### Is this useful?
 
-Probably not directly. It’s meant to demonstrate a topic using familiar tools. Hopefully it could provoke somebody to approach problem solving differently.
+Probably not directly. It’s meant to demonstrate a topic using familiar tools. Maybe (hopefully!) it could inspire somebody to approach problem solving differently.
 
 ## Forks
 
