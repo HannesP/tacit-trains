@@ -92,7 +92,7 @@ from operator import add, mul
 from tacit import fork, hook
 
 to_line = fork('-', mul, len) # e.g. 'abcde' -> '-----'
-newline = fork('\n', add, to_line) # e.g. '-----' -> '\n-----'
-underline = hook(add, newline)
+prepend_newline_to_line = fork('\n', add, to_line) # e.g. '-----' -> '\n-----'
+underline = hook(add, prepend_newline_to_line)
 print(underline('clackety-clack'))
 ```
