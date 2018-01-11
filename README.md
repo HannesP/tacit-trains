@@ -8,6 +8,10 @@ I’ll quote Wikipedia:
 
 > Tacit programming, also called point-free style, is a programming paradigm in which function definitions do not identify the arguments (or "points") on which they operate. Instead the definitions merely compose other functions, among which are combinators that manipulate the arguments.
 
+### Is this useful?
+
+Probably not. It’s meant to demonstrate a topic using familiar tools.
+
 ## Forks
 
 A fork is formed by three functions, and is itself a function. There are two flavours: unary and binary.
