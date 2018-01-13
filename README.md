@@ -25,7 +25,7 @@ The ubiquitous arithmetic mean:
 
 ```python
 from operator import truediv as div
-from tacit import fork
+from tacit.trains import fork
 
 avg = fork(sum, div, len)
 res = avg([1, 7, 2, 2, 9]) # 4.2
@@ -43,7 +43,12 @@ sum_plus_10 = fork(10, add, sum)
 res = sum_plus_10([1,2,3]) # 16
 ```
 
-The other special case concerns something called *capping*. This makes `g` behave as a unary function, and is achieved by passing `f` as `None`. Example:
+The other special case concerns something called *capping*. This makes `g` behave as a unary function, and is achieved by passing `f` as `None`.
+
+    fork(None, g, h)(y) ⇔ g(h(y))
+    fork(None, g, h)(x, y) ⇔ g(h(x,y))
+
+Example:
 
 ```python
 def inv(x):
@@ -74,7 +79,7 @@ A function to underline a string with dashes:
 
 ```python
 from operator import add, mul
-from tacit import train
+from tacit.trains import train
 
 underline = train(add, '\n', add, '-', mul, len)
 print(underline('clackety-clack'))
@@ -89,7 +94,7 @@ Equivalent, without using `train()`:
 
 ```python
 from operator import add, mul
-from tacit import fork, hook
+from tacit.trains import fork, hook
 
 to_line = fork('-', mul, len) # e.g. 'abcde' -> '-----'
 prepend_newline_to_line = fork('\n', add, to_line) # e.g. '-----' -> '\n-----'
