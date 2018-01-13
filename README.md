@@ -18,9 +18,11 @@ Defined in `tacit.utilities`:
 
     reflex(f)(x) ⇔ f(x, x)
     passive(f)(x, y) ⇔ f(y, x)
-    constant(c)(x[, y]) ⇔ c
+
     bond(f, y)(x) ⇔ f(x, y)
     bond(x, f)(y) ⇔ f(x, y)
+    
+    constant(c)(x[, y]) ⇔ c
     left(x, y) ⇔ x
     right(x, y) ⇔ y
 

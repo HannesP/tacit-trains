@@ -23,3 +23,9 @@ def bond(a,b):
             return b(a,x)
         return g
     return g
+
+def left(x, y):
+	return x
+
+def right(x, y):
+	return y
