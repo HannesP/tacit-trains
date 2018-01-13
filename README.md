@@ -67,11 +67,12 @@ A hook is formed by two functions.
 
 ## Trains
 
-A train is a way to string together a longer sequence of functions according to the following pattern:
+A train is a generalisation of hooks and forks. According to the below pattern, any non-zero number of functions can be stringed together to recursively form a train.
 
+    train(f) ⇔ f
     train(f, g) ⇔ hook(f, g)
     train(f, g, h) ⇔ fork(f, g, h)
-    train(…, f, g, h) ⇔ train(…, fork(f, g, h))
+    train(…, f, g, h) ⇔ train(…, train(f, g, h))
     
 ### Example
 
