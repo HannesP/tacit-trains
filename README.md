@@ -12,12 +12,24 @@ I’ll quote Wikipedia:
 
 Probably not directly. It’s meant to demonstrate a topic using familiar tools. Maybe (hopefully!) it could inspire somebody to approach problem solving differently.
 
+## Tacit utilities
+
+Defined in `tacit.utilities`:
+
+    reflex(f)(x) ⇔ f(x, x)
+    passive(f)(x, y) ⇔ f(y, x)
+    constant(c)(x[, y]) ⇔ c
+    bond(f, y)(x) ⇔ f(x, y)
+    bond(x, f)(y) ⇔ f(x, y)
+    left(x, y) ⇔ x
+    right(x, y) ⇔ y
+
 ## Forks
 
 A fork is formed by three functions, and is itself a function. There are two flavours: unary and binary.
 
     fork(f, g, h)(y) ⇔ g(f(y), h(y))
-    fork(f, g, h)(x, y) ⇔ g(f(x,y), h(x,y))
+    fork(f, g, h)(x, y) ⇔ g(f(x, y), h(x, y))
 
 ### Examples
 
