@@ -123,7 +123,7 @@ print(underline('clackety-clack'))
 
 ### Longer example
 
-This example demonstrates composing a function to calculate the sample standard deviation using a train of simple functions.
+This example demonstrates composing a function to calculate the sample standard deviation using a train of functions and some tacit utilities.
 
 ```python
 from tacit.trains import train
