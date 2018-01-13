@@ -101,3 +101,16 @@ prepend_newline_to_line = fork('\n', add, to_line) # e.g. '-----' -> '\n-----'
 underline = hook(add, prepend_newline_to_line)
 print(underline('clackety-clack'))
 ```
+
+### Longer example
+
+This example demonstrates composing a function to calculate the sample standard deviation using a train of simple functions.
+
+```python
+from tacit.trains import train
+from tacit.utils import passive, reflex
+
+from operator import add, sub, mul, truediv as div
+from math import sqrt
+
+std = train(None, sqrt, train(-1, plus, len), passive(divide), None, sum, None, reflex(times), train(minus, sum, divide, len))
