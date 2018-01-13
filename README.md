@@ -114,4 +114,4 @@ from tacit.utils import passive, reflex
 from operator import add, sub, mul, truediv as div
 from math import sqrt
 
-std = train(None, sqrt, train(-1, plus, len), passive(divide), None, sum, None, reflex(times), train(minus, sum, divide, len))
+std = train(None, sqrt, train(-1, add, len), passive(div), None, sum, None, reflex(mul), train(sub, sum, div, len))
