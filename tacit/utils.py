@@ -24,8 +24,12 @@ def bond(a,b):
         return g
     return g
 
-def left(x, y):
-	return x
+def left(*x):
+	if len(x) == 0 or len(x) > 2:
+		raise Exception
+	return x[0]
 
-def right(x, y):
-	return y
+def right(*x):
+	if len(x) == 0 or len(x) > 2:
+		raise Exception
+	return x[-1]
