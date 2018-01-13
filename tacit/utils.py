@@ -1,12 +1,12 @@
 def reflex(f):
-    def q(x):
+    def g(x):
         return f(x,x)
-    return q
+    return g
 
 def passive(f):
-    def q(x,y):
+    def g(x,y):
         return f(y,x)
-    return q
+    return g
 
 def constant(y):
     def f(*x):
@@ -16,10 +16,10 @@ def constant(y):
     return f
 
 def bond(a,b):
-    def q(x):
+    def g(x):
         if callable(a):
             return a(x,b)
         elif callable(b):
             return b(a,x)
-        return q
-	return q
+        return g
+    return g
