@@ -132,4 +132,7 @@ from tacit.utils import passive, reflex
 from operator import add, sub, mul, truediv as div
 from math import sqrt
 
+import numpy as np
+
 std = train(None, sqrt, train(-1, add, len), passive(div), None, sum, None, reflex(mul), train(sub, sum, div, len))
+std(np.array([1, 4, 3, 8, 8, 5])) # 2.786873995477131
