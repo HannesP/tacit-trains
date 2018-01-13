@@ -14,7 +14,7 @@ Probably not directly. It’s meant to demonstrate a topic using familiar tools.
 
 ## Tacit utilities
 
-Defined in `tacit.utilities`:
+Defined in `tacit.utils`:
 
     reflex(f)(x) ⇔ f(x, x)
     passive(f)(x, y) ⇔ f(y, x)
