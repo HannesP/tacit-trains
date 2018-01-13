@@ -16,14 +16,18 @@ Probably not directly. It’s meant to demonstrate a topic using familiar tools.
 
 Defined in `tacit.utils`:
 
-    reflex(f)(x) ⇔ f(x, x)
+    reflex(f)(y) ⇔ f(y, y)
     passive(f)(x, y) ⇔ f(y, x)
 
     bond(f, y)(x) ⇔ f(x, y)
     bond(x, f)(y) ⇔ f(x, y)
     
-    constant(c)(x[, y]) ⇔ c
+    constant(c)(y) ⇔ c
+    constant(c)(x, y) ⇔ c
+
+    left(y) ⇔ y
     left(x, y) ⇔ x
+    right(y) ⇔ y
     right(x, y) ⇔ y
 
 ## Forks
